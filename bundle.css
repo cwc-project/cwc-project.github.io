@@ -6330,3 +6330,18 @@ a.text-dark:focus, a.text-dark:hover {
   color: gray;
   font-style: italic; }
 
+.projects-form {
+  display: flex;
+  align-items: center; }
+
+.project-input {
+  /* font-size: 1.2rem; */
+  /* border-bottom-right-radius: 0;
+    border-top-right-radius: 0; */
+  /* padding-left: 1rem; */ }
+
+.project-badge {
+  padding: 0.8rem;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0; }
+
