@@ -6316,3 +6316,17 @@ a.text-dark:focus, a.text-dark:hover {
 .footer_par {
   margin-bottom: 0.3rem; }
 
+.main-header {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-top: 2rem; }
+
+.geeting {
+  text-align: center; }
+
+.loading-user {
+  text-align: center;
+  color: gray;
+  font-style: italic; }
+
