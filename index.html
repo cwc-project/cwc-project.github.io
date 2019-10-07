@@ -5,16 +5,25 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <base href="/" />
     <title>CWC-project</title>
-  <link href="/vendors~app.74545a457cd8bda815dc.css" rel="stylesheet"><link href="/app.74545a457cd8bda815dc.css" rel="stylesheet"></head>
+    <script>
+      (function({ origin, search, hash }) {
+        if (search) {
+          const firstQueryKey = search.split('=')[0];
+          const slashAppear = search.indexOf('/') !== -1;
+          if (firstQueryKey === '?p' && slashAppear) {
+            const searchValue = search.slice(3); //exclude ?p= from search string
+            window.history.replaceState(
+              null,
+              null,
+              origin + searchValue + hash,
+            );
+          }
+        }
+      })(window.location);
+    </script>
+  <link href="/vendors~app.7e65f900e3597cdefafa.css" rel="stylesheet"><link href="/app.7e65f900e3597cdefafa.css" rel="stylesheet"></head>
   <body>
     <div id="app"></div>
-    <script>
-      window.addEventListener('beforeunload', event => {
-        event.preventDefault();
-        return alert('Are you shure?');
-      });
-    </script>
-  <script type="text/javascript" src="/vendors~app.74545a457cd8bda815dc.bundle.js"></script><script type="text/javascript" src="/app.74545a457cd8bda815dc.bundle.js"></script></body>
+  <script type="text/javascript" src="/vendors~app.7e65f900e3597cdefafa.bundle.js"></script><script type="text/javascript" src="/app.7e65f900e3597cdefafa.bundle.js"></script></body>
 </html>
