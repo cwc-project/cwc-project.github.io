@@ -1,30 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CWC-project</title>
-    <script>
-      (function({ origin, search, hash }) {
-        // ограничиваем scope с помощью iffe
-        if (search) {
-          const firstQueryKey = search.split('=')[0];
-          const slashAppear = search.indexOf('/') !== -1;
-          if (firstQueryKey === '?p' && slashAppear) {
-            const searchValue = search.slice(3); //exclude ?p= from search string
-            window.history.replaceState(
-              null,
-              null,
-              origin + searchValue + hash,
-            );
-          }
-        }
-      })(window.location);
-    </script>
-  <link href="/vendors~app.21f8dbdd8d6ab609ff97.css" rel="stylesheet"><link href="/app.21f8dbdd8d6ab609ff97.css" rel="stylesheet"></head>
-  <body>
-    <div id="app"></div>
-  <script type="text/javascript" src="/vendors~app.21f8dbdd8d6ab609ff97.bundle.js"></script><script type="text/javascript" src="/app.21f8dbdd8d6ab609ff97.bundle.js"></script></body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>React Template</title>
+</head>
+<body>
+  <div id="app"></div>
+<script type="text/javascript" src="bundle.js"></script></body>
 </html>
