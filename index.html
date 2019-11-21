@@ -1,71 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>dbClick ios</title>
-    <style>
-      div {
-        border: 1px solid #000;
-        padding: 2rem;
-        margin: 2rem;
-      }
-      div#double-tap {
-        height: 50px;
-        width: 200px;
-        border: 1px solid black;
-        background-color: lightblue;
-        line-height: 50px;
-        text-align: center;
-        margin: 50px auto;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="div">Double Tap onclick</div>
-    <div id="double-tap">Double Tap touchstart</div>
-    <!-- <div id="double-tap">Double Tap Me NEW !!!</div> -->
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CWC-project</title>
     <script>
-      // const div = document.getElementById('div');
-      // let tappedTwice = false;
-      // function onDobleClick(e) {
-      //   if (!tappedTwice) {
-      //     tappedTwice = true;
-      //     setTimeout(function() {
-      //       tappedTwice = false;
-      //     }, 300);
-      //     return;
-      //   }
-      //   e.preventDefault();
-      //   alert('Div double click');
-      // }
-      // div.ontouchstart = onDobleClick;
-      const div = document.getElementById('div');
-      const doubleTap = document.getElementById('double-tap');
-
-      doubleTap.addEventListener('touchstart', tapHandler);
-      doubleTap.addEventListener('dblclick', function() {
-        alert('double clicked');
-      });
-
-      div.addEventListener('click', tapHandler);
-    
-      var tapedTwice = false;
-
-      function tapHandler(event) {
-        event.preventDefault();
-        if (!tapedTwice) {
-          tapedTwice = true;
-          setTimeout(function() {
-            tapedTwice = false;
-          }, 300);
-          return false;
+      (function({ origin, search, hash }) {
+        // ограничиваем scope с помощью iffe
+        if (search) {
+          const firstQueryKey = search.split('=')[0];
+          const slashAppear = search.indexOf('/') !== -1;
+          if (firstQueryKey === '?p' && slashAppear) {
+            const searchValue = search.slice(3); //exclude ?p= from search string
+            window.history.replaceState(
+              null,
+              null,
+              origin + searchValue + hash,
+            );
+          }
         }
-        // event.preventDefault();
-        //action on double tap goes below
-        alert('You tapped me Twice !!!');
-      }
+      })(window.location);
     </script>
-  </body>
+  <link href="/vendors~app.d0fc4b13fc96180c6ce7.css" rel="stylesheet"><link href="/app.d0fc4b13fc96180c6ce7.css" rel="stylesheet"></head>
+  <body>
+    <div id="app"></div>
+  <script type="text/javascript" src="/vendors~app.d0fc4b13fc96180c6ce7.bundle.js"></script><script type="text/javascript" src="/app.d0fc4b13fc96180c6ce7.bundle.js"></script></body>
 </html>
