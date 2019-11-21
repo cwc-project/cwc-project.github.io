@@ -23,8 +23,8 @@
     </style>
   </head>
   <body>
-    <div id="div">Просто блок</div>
-    <div id="double-tap">Double Tap Me NEW !!!</div>
+    <div id="div">Double Tap onclick</div>
+    <div id="double-tap">Double Tap touchstart</div>
     <!-- <div id="double-tap">Double Tap Me NEW !!!</div> -->
     <script>
       // const div = document.getElementById('div');
@@ -41,13 +41,16 @@
       //   alert('Div double click');
       // }
       // div.ontouchstart = onDobleClick;
+      const div = document.getElementById('div');
       const doubleTap = document.getElementById('double-tap');
 
-        doubleTap.addEventListener('touchstart', tapHandler)
-        doubleTap.addEventListener('dblclick', function() {
-          alert('double clicked');
-        });
+      doubleTap.addEventListener('touchstart', tapHandler);
+      doubleTap.addEventListener('dblclick', function() {
+        alert('double clicked');
+      });
 
+      div.addEventListener('click', tapHandler);
+    
       var tapedTwice = false;
 
       function tapHandler(event) {
