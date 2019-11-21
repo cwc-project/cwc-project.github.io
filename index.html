@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>dbClick ios</title>
     <style>
-      /* div {
+      div {
         border: 1px solid #000;
         padding: 2rem;
         margin: 2rem;
-      } */
+      }
       div#double-tap {
         height: 50px;
         width: 200px;
@@ -23,8 +23,9 @@
     </style>
   </head>
   <body>
-    <!-- <div id="div">Double click this div</div> -->
-    <div id="double-tap">Double Tap Me !!!</div>
+    <div id="div">Просто блок</div>
+    <div id="double-tap">Double Tap Me NEW !!!</div>
+    <!-- <div id="double-tap">Double Tap Me NEW !!!</div> -->
     <script>
       // const div = document.getElementById('div');
       // let tappedTwice = false;
@@ -40,13 +41,17 @@
       //   alert('Div double click');
       // }
       // div.ontouchstart = onDobleClick;
-      document
-        .getElementById('double-tap')
-        .addEventListener('touchstart', tapHandler);
+      const doubleTap = document.getElementById('double-tap');
+
+        doubleTap.addEventListener('touchstart', tapHandler)
+        doubleTap.addEventListener('dblclick', function() {
+          alert('double clicked');
+        });
 
       var tapedTwice = false;
 
       function tapHandler(event) {
+        event.preventDefault();
         if (!tapedTwice) {
           tapedTwice = true;
           setTimeout(function() {
@@ -54,7 +59,7 @@
           }, 300);
           return false;
         }
-        event.preventDefault();
+        // event.preventDefault();
         //action on double tap goes below
         alert('You tapped me Twice !!!');
       }
