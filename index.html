@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>onDobleClick</title>
+    <title>dbClick ios</title>
     <style>
       div {
         border: 1px solid #000;
@@ -14,59 +14,21 @@
     </style>
   </head>
   <body>
-    <div id="div">Click this div</div>
-    <div id="divp" style="cursor: pointer;">
-      Click this div with pointer
-    </div>
-    <div id="ddiv">DoubleClick this div (default prevented)</div>
-    <div id="ddivp" style="cursor: pointer;">
-      DoubleClick this div with pointer (default prevented)
-    </div>
-
-    <div>
-      <input type="checkbox" />
-      <label id="label">
-        DoubleClick this Label
-      </label>
-    </div>
-
-    <div>
-        <input type="checkbox" />
-        <label id="labelp" style="cursor: pointer;">
-          DoubleClick this Label with pointer
-        </label>
-      </div>
-
+    <div id="div">Double click this div</div>
     <script>
       const div = document.getElementById('div');
-      const divp = document.getElementById('divp');
-      const ddiv = document.getElementById('ddiv');
-      const ddivp = document.getElementById('ddivp');
-      const label = document.getElementById('label');
-      const labelp = document.getElementById('labelp');
+      let tappedTwice = false;
+      function onDobleClick(e) {        
+        if(!tappedTwice) {
+          tappedTwice = true;
+          setTimeout(function() {tappedTwice = false}, 300)
+          return;
+        }
+        e.preventDefault();
+        alert('Div double click')
 
-      div.onclick = function() {
-        alert('div click');
       };
-      divp.onclick = function() {
-        alert('div with pointer click');
-      };
-      ddiv.ondblclick = function(e) {
-        e.preventDefault();
-        alert('div double click');
-      };
-      ddivp.ondblclick = function(e) {
-        e.preventDefault();
-        alert('div with pointer double click');
-      };
-      label.ondblclick = function(e) {
-        e.preventDefault();
-        alert('label double click');
-      };
-      labelp.ondblclick = function(e) {
-        e.preventDefault();
-        alert('label with pointer double click');
-      };
+      div.onclick = onDobleClick;
     </script>
   </body>
 </html>
