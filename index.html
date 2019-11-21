@@ -18,9 +18,9 @@
     <div id="divp" style="cursor: pointer;">
       Click this div with pointer
     </div>
-    <div id="ddiv">DoubleClick this div</div>
+    <div id="ddiv">DoubleClick this div (default prevented)</div>
     <div id="ddivp" style="cursor: pointer;">
-      DoubleClick this div with pointer
+      DoubleClick this div with pointer (default prevented)
     </div>
 
     <script>
@@ -35,10 +35,12 @@
       divp.onclick = function() {
         alert('div with pointer click');
       };
-      ddiv.ondblclick = function() {
+      ddiv.ondblclick = function(e) {
+        e.preventDefault();
         alert('div double click');
       };
-      ddivp.ondblclick = function() {
+      ddivp.ondblclick = function(e) {
+        e.preventDefault();
         alert('div with pointer double click');
       };
     </script>
