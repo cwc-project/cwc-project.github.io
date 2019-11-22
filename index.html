@@ -14,17 +14,18 @@
           const slashAppear = l.search.indexOf('/') !== -1;
           if (firstQueryKey === '?p' && slashAppear) {
             const searchValue = l.search.slice(3); //exclude ?p= from search string
+            // prettier-ignore
             window.history.replaceState(
               null,
               null,
-              l.origin + searchValue + l.hash, //no trailing commas for IE
+              l.origin + searchValue + l.hash //no trailing commas for IE
             );
           }
         }
       })(window.location);
     </script>
-  <link href="/vendors~app.3eeefd13231663a6071c.css" rel="stylesheet"><link href="/app.3eeefd13231663a6071c.css" rel="stylesheet"></head>
+  <link href="/vendors~app.61d443b4fbce0f83d2d5.css" rel="stylesheet"><link href="/app.61d443b4fbce0f83d2d5.css" rel="stylesheet"></head>
   <body>
     <div id="app"></div>
-  <script type="text/javascript" src="/vendors~app.3eeefd13231663a6071c.bundle.js"></script><script type="text/javascript" src="/app.3eeefd13231663a6071c.bundle.js"></script></body>
+  <script type="text/javascript" src="/vendors~app.61d443b4fbce0f83d2d5.bundle.js"></script><script type="text/javascript" src="/app.61d443b4fbce0f83d2d5.bundle.js"></script></body>
 </html>
